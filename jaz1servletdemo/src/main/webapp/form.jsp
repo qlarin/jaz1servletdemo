@@ -19,8 +19,8 @@
 			Ogłoszenie na uczelni<input type="checkbox" name="inf" value="Ogłoszenie na uczelni"><br>
 			Facebook<input type="checkbox" name="inf" value="Facebook"><br>
 			Znajomi<input type="checkbox" name="inf" value="Znajomi"><br>
-			Inne (jakie?)<input type="text" name="inf"><br><br>
-		Czym się zajmujesz?<input type="text" name="job"><br><br>
+			Inne (jakie?) <input type="text" name="inf"><br><br>
+		Czym się zajmujesz? <input type="text" name="job"><br><br>
 		<input type="submit" value="Wyślij"><br>	
 		
 	</form>
