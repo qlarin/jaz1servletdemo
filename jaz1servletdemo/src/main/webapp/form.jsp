@@ -7,10 +7,16 @@
 <title>Formularz</title>
 </head>
 <body>
+
+<jsp:useBean id="archive" class="jaz1servletdemo.repo.Archive" scope="application" />
+<jsp:useBean id="person" class="jaz1servletdemo.source.Person" scope="session" />
+
 	<h3>Formularz rejestracyjny</h3>
-	<form action="test">
-		Imię: <input type="text" name="name"><br>
-		Nazwisko: <input type="text" name="surname"><br>
+	
+	<form action="addPerson.jsp" method="get">
+	
+		Imię: <input type="text" name="firstName" value="${person.firstName}"><br>
+		Nazwisko: <input type="text" name="surName" value="${person.surName}"><br>
 		Email: <input type="text" name="email"><br>
 		Powtórz email: <input type="text" name="pemail"><br>
 		Pracodawca: <input type="text" name="employer"><br><br>

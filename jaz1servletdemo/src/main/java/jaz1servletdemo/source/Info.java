@@ -1,7 +1,9 @@
 package jaz1servletdemo.source;
 
+import java.util.List;
 
-public class Info extends Entity {
+
+public class Info{
 
 	private String info;
 	private Person person;
@@ -20,6 +22,7 @@ public class Info extends Entity {
 
 	public void setPerson(Person person) {
 		this.person = person;
+		
 	}
 	
 	

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class form_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -46,20 +46,10 @@ public final class form_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("<title>Formularz</title>\r\n");
+      out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\r\n");
-      jaz1servletdemo.repo.Archive archive = null;
-      synchronized (application) {
-        archive = (jaz1servletdemo.repo.Archive) _jspx_page_context.getAttribute("archive", PageContext.APPLICATION_SCOPE);
-        if (archive == null){
-          archive = new jaz1servletdemo.repo.Archive();
-          _jspx_page_context.setAttribute("archive", archive, PageContext.APPLICATION_SCOPE);
-        }
-      }
-      out.write('\r');
-      out.write('\n');
       jaz1servletdemo.source.Person person = null;
       synchronized (session) {
         person = (jaz1servletdemo.source.Person) _jspx_page_context.getAttribute("person", PageContext.SESSION_SCOPE);
@@ -68,31 +58,36 @@ public final class form_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("person", person, PageContext.SESSION_SCOPE);
         }
       }
+      out.write('\r');
+      out.write('\n');
+      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("person"), request);
+      out.write(" \r\n");
+      jaz1servletdemo.repo.Archive archive = null;
+      synchronized (application) {
+        archive = (jaz1servletdemo.repo.Archive) _jspx_page_context.getAttribute("archive", PageContext.APPLICATION_SCOPE);
+        if (archive == null){
+          archive = new jaz1servletdemo.repo.Archive();
+          _jspx_page_context.setAttribute("archive", archive, PageContext.APPLICATION_SCOPE);
+        }
+      }
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\t<h3>Formularz rejestracyjny</h3>\r\n");
-      out.write("\t\r\n");
-      out.write("\t<form action=\"addPerson.jsp\" method=\"get\">\r\n");
-      out.write("\t\r\n");
-      out.write("\t\tImię: <input type=\"text\" name=\"firstName\" value=\"");
+ 
+  archive.add(person);
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<p>Dodano na listę: </p>\r\n");
+      out.write("<p>Imię: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><br>\r\n");
-      out.write("\t\tNazwisko: <input type=\"text\" name=\"surName\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.surName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><br>\r\n");
-      out.write("\t\tEmail: <input type=\"text\" name=\"email\"><br>\r\n");
-      out.write("\t\tPowtórz email: <input type=\"text\" name=\"pemail\"><br>\r\n");
-      out.write("\t\tPracodawca: <input type=\"text\" name=\"employer\"><br><br>\r\n");
-      out.write("\t\tSkąd dowiedziałeś się o konferencji:<br><br>\r\n");
-      out.write("\t\t\tOgłoszenie w pracy<input type=\"checkbox\" name=\"inf\" value=\"Ogłoszenie w pracy\"><br>\r\n");
-      out.write("\t\t\tOgłoszenie na uczelni<input type=\"checkbox\" name=\"inf\" value=\"Ogłoszenie na uczelni\"><br>\r\n");
-      out.write("\t\t\tFacebook<input type=\"checkbox\" name=\"inf\" value=\"Facebook\"><br>\r\n");
-      out.write("\t\t\tZnajomi<input type=\"checkbox\" name=\"inf\" value=\"Znajomi\"><br>\r\n");
-      out.write("\t\t\tInne (jakie?) <input type=\"text\" name=\"inf\"><br><br>\r\n");
-      out.write("\t\tCzym się zajmujesz? <input type=\"text\" name=\"job\"><br><br>\r\n");
-      out.write("\t\t<input type=\"submit\" value=\"Wyślij\"><br>\t\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t</form>\r\n");
+      out.write(" </p>\r\n");
+      out.write("<p>Nazwisko: ");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((jaz1servletdemo.source.Person)_jspx_page_context.findAttribute("person")).getSurName())));
+      out.write("</p>\r\n");
+      out.write("<p>\r\n");
+      out.write("  <a href=\"showAll.jsp\">Pokaż wszystkich</a>\r\n");
+      out.write("</p>\r\n");
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

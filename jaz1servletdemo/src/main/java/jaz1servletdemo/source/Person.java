@@ -2,15 +2,21 @@ package jaz1servletdemo.source;
 
 import java.util.*;
 
-public class Person extends Entity{
+public class Person{
 
 	public Person(){
 		super();
-		this.infos = new ArrayList<Info>();
 	}
 	
-	private String firstName;
-	private String surName;
+	public Person(String firstName, String surName){
+		super();
+		this.firstName = firstName;
+		this.surName = surName;
+	
+	}
+	
+	private String firstName = " ";
+	private String surName = " ";
 	private String email;
 	private String employee;
 	private String job;
@@ -64,8 +70,6 @@ public class Person extends Entity{
 	public void setInfos(List<Info> infos) {
 		this.infos = infos;
 	}
-	
-	
 	
 	
 }
