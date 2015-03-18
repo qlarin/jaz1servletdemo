@@ -1,8 +1,9 @@
 package jaz1servletdemo.source;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Person{
+public class Person extends Unit {
 
 	public Person(){
 		super();
@@ -12,17 +13,26 @@ public class Person{
 		super();
 		this.firstName = firstName;
 		this.surName = surName;
+		this.infos = new ArrayList<Info>();
+	}
 	
+	public Person(String firstName, String surName, String email, String employer, String job){
+		super();
+		this.firstName = firstName;
+		this.surName = surName;
+		this.email = email;
+		this.employer = employer;
+		this.job = job;
+		this.infos = new ArrayList<Info>();
 	}
 	
 	private String firstName = " ";
 	private String surName = " ";
-	private String email;
-	private String employee;
-	private String job;
+	private String email = " ";
+	private String employer = " ";
+	private String job = " ";
+	private List<Info> infos; 
 	
-	private List<Info> infos;
-
 	public String getFirstName() {
 		return firstName;
 	}
@@ -47,12 +57,12 @@ public class Person{
 		this.email = email;
 	}
 
-	public String getEmployee() {
-		return employee;
+	public String getEmployer() {
+		return employer;
 	}
 
-	public void setEmployee(String employee) {
-		this.employee = employee;
+	public void setEmployer(String employer) {
+		this.employer = employer;
 	}
 
 	public String getJob() {
@@ -70,6 +80,5 @@ public class Person{
 	public void setInfos(List<Info> infos) {
 		this.infos = infos;
 	}
-	
 	
 }

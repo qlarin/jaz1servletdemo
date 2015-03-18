@@ -68,6 +68,16 @@ public final class form_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("person", person, PageContext.SESSION_SCOPE);
         }
       }
+      out.write('\r');
+      out.write('\n');
+      jaz1servletdemo.source.Info inform = null;
+      synchronized (session) {
+        inform = (jaz1servletdemo.source.Info) _jspx_page_context.getAttribute("inform", PageContext.SESSION_SCOPE);
+        if (inform == null){
+          inform = new jaz1servletdemo.source.Info();
+          _jspx_page_context.setAttribute("inform", inform, PageContext.SESSION_SCOPE);
+        }
+      }
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t<h3>Formularz rejestracyjny</h3>\r\n");
@@ -80,16 +90,22 @@ public final class form_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\tNazwisko: <input type=\"text\" name=\"surName\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.surName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><br>\r\n");
-      out.write("\t\tEmail: <input type=\"text\" name=\"email\"><br>\r\n");
+      out.write("\t\tEmail: <input type=\"text\" name=\"email\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.email}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><br>\r\n");
       out.write("\t\tPowtórz email: <input type=\"text\" name=\"pemail\"><br>\r\n");
-      out.write("\t\tPracodawca: <input type=\"text\" name=\"employer\"><br><br>\r\n");
+      out.write("\t\tPracodawca: <input type=\"text\" name=\"employer\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.employer}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><br><br>\r\n");
       out.write("\t\tSkąd dowiedziałeś się o konferencji:<br><br>\r\n");
-      out.write("\t\t\tOgłoszenie w pracy<input type=\"checkbox\" name=\"inf\" value=\"Ogłoszenie w pracy\"><br>\r\n");
-      out.write("\t\t\tOgłoszenie na uczelni<input type=\"checkbox\" name=\"inf\" value=\"Ogłoszenie na uczelni\"><br>\r\n");
-      out.write("\t\t\tFacebook<input type=\"checkbox\" name=\"inf\" value=\"Facebook\"><br>\r\n");
-      out.write("\t\t\tZnajomi<input type=\"checkbox\" name=\"inf\" value=\"Znajomi\"><br>\r\n");
-      out.write("\t\t\tInne (jakie?) <input type=\"text\" name=\"inf\"><br><br>\r\n");
-      out.write("\t\tCzym się zajmujesz? <input type=\"text\" name=\"job\"><br><br>\r\n");
+      out.write("\t\t\tOgłoszenie w pracy<input type=\"checkbox\" name=\"inf1\" value=\"Ogłoszenie w pracy\"><br>\r\n");
+      out.write("\t\t\tOgłoszenie na uczelni<input type=\"checkbox\" name=\"inf2\" value=\"Ogłoszenie na uczelni\"><br>\r\n");
+      out.write("\t\t\tFacebook<input type=\"checkbox\" name=\"inf3\" value=\"Facebook\"><br>\r\n");
+      out.write("\t\t\tZnajomi<input type=\"checkbox\" name=\"inf4\" value=\"Znajomi\"><br>\r\n");
+      out.write("\t\t\tInne (jakie?) <input type=\"text\" name=\"inf5\"><br><br>\r\n");
+      out.write("\t\tCzym się zajmujesz? <input type=\"text\" name=\"job\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.job}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><br><br>\r\n");
       out.write("\t\t<input type=\"submit\" value=\"Wyślij\"><br>\t\r\n");
       out.write("\t\t\r\n");
       out.write("\t</form>\r\n");

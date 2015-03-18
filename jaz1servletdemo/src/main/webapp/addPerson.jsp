@@ -9,16 +9,15 @@
 <body>
 
 <jsp:useBean id="person" class="jaz1servletdemo.source.Person" scope="session" />
+<jsp:useBean id="inform" class="jaz1servletdemo.source.Info" scope="session" />
 <jsp:setProperty name="person" property="*" /> 
+<jsp:setProperty name="inform" property="*" /> 
 <jsp:useBean id="archive" class="jaz1servletdemo.repo.Archive" scope="application" />
 
-<% 
-  archive.add(person);
+<%
+  archive.add(person, inform);
 %>
-
-<p>Dodano na listę: </p>
-<p>Imię: ${person.firstName} </p>
-<p>Nazwisko: <jsp:getProperty name="person" property="surName"></jsp:getProperty></p>
+<p>Gratulacje, dodano cię na listę gości.</p>
 <p>
   <a href="showAll.jsp">Pokaż wszystkich</a>
 </p>

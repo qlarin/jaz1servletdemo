@@ -2,14 +2,14 @@ package jaz1servletdemo.repo;
 
 public class Counter {
 
-	private int counter;
+	private static int counterValue = 5;
 	
 	public int getCounter(){
-		return counter;
+		return counterValue;
 	}
 	
-	public void setCounter(int counterValue){
-		this.counter = counter + counterValue;
+	public void reduceCounter(){
+		counterValue--;
 	}
 	
 	
