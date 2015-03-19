@@ -11,7 +11,6 @@ private ArrayList<Person> database = new ArrayList<Person>();
 	public void add(Person person){
 		Person newPerson = new Person(person.getFirstName(), person.getSurName(), person.getEmail(), person.getEmployer(), person.getJob(), person.getInfo());
 		database.add(newPerson);
-	
 	}
 	
 	public List<Person> getAll(){

@@ -12,10 +12,12 @@
 <jsp:useBean id="person" class="jaz1servletdemo.source.Person" scope="session" />
 <jsp:setProperty name="person" property="*" />  
 <jsp:useBean id="archive" class="jaz1servletdemo.repo.Archive" scope="application" />
-
+<jsp:useBean id="makeList" class="jaz1servletdemo.repo.makeList" scope="application" />
+<jsp:useBean id="refresh" class="jaz1servletdemo.repo.Refresh" scope="application" />
 <%
+	refresh.clearList(person.getInfo());
 	for(String info: request.getParameterValues("inf")){
-		person.setInfo(info);
+		makeList.makeNewList(person.getInfo(), info);
 	}	
  	archive.add(person);
 %>

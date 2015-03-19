@@ -72,11 +72,32 @@ public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("archive", archive, PageContext.APPLICATION_SCOPE);
         }
       }
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write('\r');
+      out.write('\n');
+      jaz1servletdemo.repo.makeList makeList = null;
+      synchronized (application) {
+        makeList = (jaz1servletdemo.repo.makeList) _jspx_page_context.getAttribute("makeList", PageContext.APPLICATION_SCOPE);
+        if (makeList == null){
+          makeList = new jaz1servletdemo.repo.makeList();
+          _jspx_page_context.setAttribute("makeList", makeList, PageContext.APPLICATION_SCOPE);
+        }
+      }
+      out.write('\r');
+      out.write('\n');
+      jaz1servletdemo.repo.Refresh refresh = null;
+      synchronized (application) {
+        refresh = (jaz1servletdemo.repo.Refresh) _jspx_page_context.getAttribute("refresh", PageContext.APPLICATION_SCOPE);
+        if (refresh == null){
+          refresh = new jaz1servletdemo.repo.Refresh();
+          _jspx_page_context.setAttribute("refresh", refresh, PageContext.APPLICATION_SCOPE);
+        }
+      }
+      out.write('\r');
+      out.write('\n');
 
+	refresh.clearList(person.getInfo());
 	for(String info: request.getParameterValues("inf")){
-		person.setInfo(info);
+		makeList.makeNewList(person.getInfo(), info);
 	}	
  	archive.add(person);
 
