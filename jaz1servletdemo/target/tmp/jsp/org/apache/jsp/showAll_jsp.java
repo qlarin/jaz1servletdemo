@@ -4,7 +4,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import jaz1servletdemo.source.Person;
-import jaz1servletdemo.source.Info;
 
 public final class showAll_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -45,7 +44,6 @@ public final class showAll_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
@@ -62,17 +60,25 @@ public final class showAll_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_page_context.setAttribute("archive", archive, PageContext.APPLICATION_SCOPE);
         }
       }
-      out.write('\r');
-      out.write('\n');
-
+      out.write("\r\n");
+      out.write("<center><h3>Lista gości</h3><br>\r\n");
+	
   for (Person person : archive.getAll()) {
-	  out.println("<p>Imię: " + person.getFirstName() + "<br> Nazwisko: " + person.getSurName() + "</p><br>");
+	  out.println("<p><b>Imię: </b>" + person.getFirstName() +
+			  "<br><b> Nazwisko: </b>" + person.getSurName() +
+			  "<br><b> Email: </b>" + person.getEmail() +
+			  "<br><b> Pracodawca: </b>" + person.getEmployer() +
+			  "<br><b> Zajęcie: </b>" + person.getJob() +
+			  "<br><br><b> Źródło informacji: </b>" + person.getInfo() +
+			  "<br>");
+	  for(int i=0; i<100; i++){
+		  out.print("-");
+	  }
+	  out.println("");
   	}
-  for (Info info : archive.getAllInfo()){
-	  out.println("<p>Skąd wiesz: " + info.getInf1() + ", " + info.getInf2() + ", " + info.getInf3() + ", " + info.getInf4() + ", " + info.getInf5() + "</p><br>");
-	}
 
       out.write("\r\n");
+      out.write("</center>\r\n");
       out.write("<p>\r\n");
       out.write("  <a href=\"form.jsp\">Dodaj kolejnego</a><br>\r\n");
       out.write("  <a href=\"index.jsp\">Wróć na główną stronę</a>\r\n");

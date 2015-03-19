@@ -1,3 +1,4 @@
+<%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,13 +10,14 @@
 <body>
 
 <jsp:useBean id="person" class="jaz1servletdemo.source.Person" scope="session" />
-<jsp:useBean id="inform" class="jaz1servletdemo.source.Info" scope="session" />
-<jsp:setProperty name="person" property="*" /> 
-<jsp:setProperty name="inform" property="*" /> 
+<jsp:setProperty name="person" property="*" />  
 <jsp:useBean id="archive" class="jaz1servletdemo.repo.Archive" scope="application" />
 
 <%
-  archive.add(person, inform);
+	for(String info: request.getParameterValues("inf")){
+		person.setInfo(info);
+	}	
+ 	archive.add(person);
 %>
 <p>Gratulacje, dodano cię na listę gości.</p>
 <p>

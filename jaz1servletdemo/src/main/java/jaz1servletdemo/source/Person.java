@@ -1,7 +1,5 @@
 package jaz1servletdemo.source;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Person extends Unit {
 
@@ -9,21 +7,21 @@ public class Person extends Unit {
 		super();
 	}
 	
-	public Person(String firstName, String surName){
+	public Person(String firstName, String surName, String info){
 		super();
-		this.firstName = firstName;
-		this.surName = surName;
-		this.infos = new ArrayList<Info>();
+		this.setFirstName(firstName);
+		this.setSurName(surName);
+		this.setInfo(info);		
 	}
 	
-	public Person(String firstName, String surName, String email, String employer, String job){
+	public Person(String firstName, String surName, String email, String employer, String job, String info){
 		super();
-		this.firstName = firstName;
-		this.surName = surName;
-		this.email = email;
-		this.employer = employer;
-		this.job = job;
-		this.infos = new ArrayList<Info>();
+		this.setFirstName(firstName);
+		this.setSurName(surName);
+		this.setEmail(email);
+		this.setEmployer(employer);
+		this.setJob(job);
+		this.setInfo(info);
 	}
 	
 	private String firstName = " ";
@@ -31,7 +29,8 @@ public class Person extends Unit {
 	private String email = " ";
 	private String employer = " ";
 	private String job = " ";
-	private List<Info> infos; 
+	private String info = " ";
+
 	
 	public String getFirstName() {
 		return firstName;
@@ -73,12 +72,14 @@ public class Person extends Unit {
 		this.job = job;
 	}
 
-	public List<Info> getInfos() {
-		return infos;
+	public String getInfo() {
+		return info;
 	}
 
-	public void setInfos(List<Info> infos) {
-		this.infos = infos;
+	public void setInfo(String info) {
+		this.info += info + " ";
 	}
+	
+	
 	
 }

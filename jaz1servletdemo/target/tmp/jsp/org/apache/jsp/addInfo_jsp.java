@@ -3,9 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.util.*;
 
-public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class addInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -43,7 +42,6 @@ public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
@@ -52,39 +50,25 @@ public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\r\n");
-      jaz1servletdemo.source.Person person = null;
-      synchronized (session) {
-        person = (jaz1servletdemo.source.Person) _jspx_page_context.getAttribute("person", PageContext.SESSION_SCOPE);
-        if (person == null){
-          person = new jaz1servletdemo.source.Person();
-          _jspx_page_context.setAttribute("person", person, PageContext.SESSION_SCOPE);
-        }
-      }
-      out.write('\r');
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("person"), request);
-      out.write("  \r\n");
-      jaz1servletdemo.repo.Archive archive = null;
+      jaz1servletdemo.source.Info inform = null;
       synchronized (application) {
-        archive = (jaz1servletdemo.repo.Archive) _jspx_page_context.getAttribute("archive", PageContext.APPLICATION_SCOPE);
-        if (archive == null){
-          archive = new jaz1servletdemo.repo.Archive();
-          _jspx_page_context.setAttribute("archive", archive, PageContext.APPLICATION_SCOPE);
+        inform = (jaz1servletdemo.source.Info) _jspx_page_context.getAttribute("inform", PageContext.APPLICATION_SCOPE);
+        if (inform == null){
+          inform = new jaz1servletdemo.source.Info();
+          _jspx_page_context.setAttribute("inform", inform, PageContext.APPLICATION_SCOPE);
         }
       }
       out.write("\r\n");
       out.write("\r\n");
-
+ 
+	String selectedInfo = "";
 	for(String info: request.getParameterValues("inf")){
-		person.setInfo(info);
-	}	
- 	archive.add(person);
+			selectedInfo += info + " ";
+		}	
+	inform.addInf(selectedInfo);
+	out.print(inform.getInf());
 
       out.write("\r\n");
-      out.write("<p>Gratulacje, dodano cię na listę gości.</p>\r\n");
-      out.write("<p>\r\n");
-      out.write("  <a href=\"showAll.jsp\">Pokaż wszystkich</a>\r\n");
-      out.write("</p>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
