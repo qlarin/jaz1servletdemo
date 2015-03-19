@@ -8,5 +8,8 @@ public class Refresh {
 		list.clear();
 	}
 	
+	public String clearValue(String value){
+		return value = " ";
+	}
 	
 }

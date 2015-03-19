@@ -12,14 +12,14 @@
 <jsp:useBean id="person" class="jaz1servletdemo.source.Person" scope="session" />
 <jsp:setProperty name="person" property="*" />  
 <jsp:useBean id="archive" class="jaz1servletdemo.repo.Archive" scope="application" />
-<jsp:useBean id="makeList" class="jaz1servletdemo.repo.makeList" scope="application" />
 <jsp:useBean id="refresh" class="jaz1servletdemo.repo.Refresh" scope="application" />
+<jsp:useBean id="usefull" class="jaz1servletdemo.repo.makeList" scope="application" />
 <%
-	refresh.clearList(person.getInfo());
-	for(String info: request.getParameterValues("inf")){
-		makeList.makeNewList(person.getInfo(), info);
-	}	
- 	archive.add(person);
+		for(String info: request.getParameterValues("inf")){
+					person.setInfo(info);
+		}	
+ 		archive.add(person);
+ 		person.clearInfo();
 %>
 <p>Gratulacje, dodano cię na listę gości.</p>
 <p>

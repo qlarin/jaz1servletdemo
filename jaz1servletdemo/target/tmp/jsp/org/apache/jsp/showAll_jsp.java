@@ -68,13 +68,11 @@ public final class showAll_jsp extends org.apache.jasper.runtime.HttpJspBase
 			  "<br><b> Nazwisko: </b>" + person.getSurName() +
 			  "<br><b> Email: </b>" + person.getEmail() +
 			  "<br><b> Pracodawca: </b>" + person.getEmployer() +
-			  "<br><b> Zajęcie: </b>" + person.getJob() +
-			  "<br><br><b> Źródło informacji: </b>" + person.getInfo() +
-			  "<br>");
-	  for(int i=0; i<100; i++){
-		  out.print("-");
+			  "<br><b> Zajmuje się: </b>" + person.getJob() +
+			  "<br><br><b> Źródła informacji: </b><br>" + person.getInfo());
+	  for(int i=0; i<50;i++){
+		  out.print("~~");
 	  }
-	  out.println("");
   	}
 
       out.write("\r\n");

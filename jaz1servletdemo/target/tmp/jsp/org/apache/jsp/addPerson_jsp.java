@@ -74,16 +74,6 @@ public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       out.write('\r');
       out.write('\n');
-      jaz1servletdemo.repo.makeList makeList = null;
-      synchronized (application) {
-        makeList = (jaz1servletdemo.repo.makeList) _jspx_page_context.getAttribute("makeList", PageContext.APPLICATION_SCOPE);
-        if (makeList == null){
-          makeList = new jaz1servletdemo.repo.makeList();
-          _jspx_page_context.setAttribute("makeList", makeList, PageContext.APPLICATION_SCOPE);
-        }
-      }
-      out.write('\r');
-      out.write('\n');
       jaz1servletdemo.repo.Refresh refresh = null;
       synchronized (application) {
         refresh = (jaz1servletdemo.repo.Refresh) _jspx_page_context.getAttribute("refresh", PageContext.APPLICATION_SCOPE);
@@ -94,12 +84,22 @@ public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       out.write('\r');
       out.write('\n');
+      jaz1servletdemo.repo.makeList usefull = null;
+      synchronized (application) {
+        usefull = (jaz1servletdemo.repo.makeList) _jspx_page_context.getAttribute("usefull", PageContext.APPLICATION_SCOPE);
+        if (usefull == null){
+          usefull = new jaz1servletdemo.repo.makeList();
+          _jspx_page_context.setAttribute("usefull", usefull, PageContext.APPLICATION_SCOPE);
+        }
+      }
+      out.write('\r');
+      out.write('\n');
 
-	refresh.clearList(person.getInfo());
-	for(String info: request.getParameterValues("inf")){
-		makeList.makeNewList(person.getInfo(), info);
-	}	
- 	archive.add(person);
+		for(String info: request.getParameterValues("inf")){
+					person.setInfo(info);
+		}	
+ 		archive.add(person);
+ 		person.clearInfo();
 
       out.write("\r\n");
       out.write("<p>Gratulacje, dodano cię na listę gości.</p>\r\n");
