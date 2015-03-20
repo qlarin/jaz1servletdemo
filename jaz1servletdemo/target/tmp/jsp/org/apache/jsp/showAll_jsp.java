@@ -61,6 +61,8 @@ public final class showAll_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
       }
       out.write("\r\n");
+      out.write("<p><a href=\"index.jsp\">Powrót do menu</a><p>\r\n");
+      out.write("\r\n");
       out.write("<center><h3>Lista gości</h3><br>\r\n");
 	
   for (Person person : archive.getAll()) {
@@ -77,11 +79,6 @@ public final class showAll_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("</center>\r\n");
-      out.write("<p>\r\n");
-      out.write("  <a href=\"form.jsp\">Dodaj kolejnego</a><br>\r\n");
-      out.write("  <a href=\"index.jsp\">Wróć na główną stronę</a>\r\n");
-      out.write("</p>\r\n");
-      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

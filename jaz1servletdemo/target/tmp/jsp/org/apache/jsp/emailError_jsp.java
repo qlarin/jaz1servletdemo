@@ -50,6 +50,7 @@ public final class emailError_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\tPadano błędny email!\r\n");
+      out.write("\t<p><a href=\"index.jsp\">Powrót do menu</a><p>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

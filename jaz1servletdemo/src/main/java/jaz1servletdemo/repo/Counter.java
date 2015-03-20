@@ -4,15 +4,15 @@ public class Counter {
 
 	private static int counterValue;
 	
-	public static int getCounter(){
+	public static synchronized int getCounter(){
 		return counterValue;
 	}
 	
-	public static void reduceCounter(){
+	public static synchronized void reduceCounter(){
 		counterValue--;
 	}
 	
-	public static void setCounter(int value){
+	public static synchronized void setCounter(int value){
 		counterValue = value;
 	}
 	

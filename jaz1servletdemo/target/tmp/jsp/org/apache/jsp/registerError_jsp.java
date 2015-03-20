@@ -50,6 +50,7 @@ public final class registerError_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\tNie można zarejestrować się drugi raz. Twoje zgłoszenie było już wysłane.\r\n");
+      out.write("\t<p><a href=\"index.jsp\">Powrót do menu</a><p>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

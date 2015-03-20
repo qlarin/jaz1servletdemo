@@ -10,6 +10,8 @@
 <body>
 
 <jsp:useBean id="archive" class="jaz1servletdemo.repo.Archive" scope="application" />
+<p><a href="index.jsp">Powrót do menu</a><p>
+
 <center><h3>Lista gości</h3><br>
 <%	
   for (Person person : archive.getAll()) {
@@ -25,9 +27,5 @@
   	}
 %>
 </center>
-<p>
-  <p><a href="index.jsp">Powrót do menu</a><p>
-</p>
-
 </body>
 </html>

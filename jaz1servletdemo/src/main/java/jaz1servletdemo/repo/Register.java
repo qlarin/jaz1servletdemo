@@ -7,11 +7,11 @@ public class Register {
 
 	private static List<String> registeredList = new ArrayList<String>();
 
-	public static List<String> getRegisteredList() {
+	public static synchronized List<String> getRegisteredList() {
 		return registeredList;
 	}
 
-	public static void addToList(String value){
+	public static synchronized void addToList(String value){
 		registeredList.add(value);
 	}
 	
