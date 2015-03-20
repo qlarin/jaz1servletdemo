@@ -27,4 +27,41 @@
     <servlet-name>InfoServlet</servlet-name>
     <url-pattern>/InfoServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>EmailFilter</display-name>
+    <filter-name>EmailFilter</filter-name>
+    <filter-class>jaz1servletdemo.web.EmailFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EmailFilter</filter-name>
+    <url-pattern>/EmailFilter</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>CounterFilter</display-name>
+    <filter-name>CounterFilter</filter-name>
+    <filter-class>jaz1servletdemo.web.CounterFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CounterFilter</filter-name>
+    <url-pattern>/CounterFilter</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>RegisterFilter</display-name>
+    <filter-name>RegisterFilter</filter-name>
+    <filter-class>jaz1servletdemo.web.RegisterFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RegisterFilter</filter-name>
+    <url-pattern>/RegisterFilter</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>jaz1servletdemo.web.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

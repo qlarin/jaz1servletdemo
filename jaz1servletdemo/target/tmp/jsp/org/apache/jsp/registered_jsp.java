@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class registered_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -49,39 +49,7 @@ public final class addPerson_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\r\n");
-      jaz1servletdemo.source.Person person = null;
-      synchronized (session) {
-        person = (jaz1servletdemo.source.Person) _jspx_page_context.getAttribute("person", PageContext.SESSION_SCOPE);
-        if (person == null){
-          person = new jaz1servletdemo.source.Person();
-          _jspx_page_context.setAttribute("person", person, PageContext.SESSION_SCOPE);
-        }
-      }
-      out.write('\r');
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("person"), request);
-      out.write("  \r\n");
-      jaz1servletdemo.repo.Archive archive = null;
-      synchronized (application) {
-        archive = (jaz1servletdemo.repo.Archive) _jspx_page_context.getAttribute("archive", PageContext.APPLICATION_SCOPE);
-        if (archive == null){
-          archive = new jaz1servletdemo.repo.Archive();
-          _jspx_page_context.setAttribute("archive", archive, PageContext.APPLICATION_SCOPE);
-        }
-      }
-      out.write("\r\n");
-      out.write("\r\n");
-
-		for(String info: request.getParameterValues("inf")){
-					person.setInfo(info);
-		}	
- 		archive.add(person);
- 		person.clearInfo();
- 		RequestDispatcher dispatcher = request.getRequestDispatcher("/RegisterServlet");
-		dispatcher.forward(request, response);
-
-      out.write("\r\n");
+      out.write("\tGratulacje, dodano Cię na listę gości.\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

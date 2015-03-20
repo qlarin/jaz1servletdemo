@@ -1,34 +1,29 @@
 package jaz1servletdemo.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet("/test")
-public class TestServlet extends HttpServlet {
+import jaz1servletdemo.repo.Register;
+
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-    public TestServlet() {
+  
+    public RegisterServlet() {
         super();
        
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.setContentType("text/html");
-		
-		PrintWriter out = response.getWriter();
-		out.println("<html><body><h2>Test pozytywny!</h2></body></html>");
-		out.close();
+		HttpSession session = request.getSession();
+		Register.addToList(session.getId());
+		response.sendRedirect("registered.jsp");
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}

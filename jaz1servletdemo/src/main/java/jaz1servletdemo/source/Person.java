@@ -16,12 +16,12 @@ public class Person extends Unit {
 		this.setInfo(info);
 	}
 	
-	private String firstName = " ";
-	private String surName = " ";
-	private String email = " ";
-	private String employer = " ";
-	private String job = " ";
-	private String info = " ";
+	private String firstName = "";
+	private String surName = "";
+	private String email = "";
+	private String employer = "";
+	private String job = "";
+	private String info = "";
 	
 	public String getFirstName() {
 		return firstName;
@@ -72,6 +72,6 @@ public class Person extends Unit {
 	}
 	
 	public void clearInfo(){
-		this.info = " ";
+		this.info = "";
 	}
 }

@@ -26,8 +26,7 @@
 %>
 </center>
 <p>
-  <a href="form.jsp">Dodaj kolejnego</a><br>
-  <a href="index.jsp">Wróć na główną stronę</a>
+  <p><a href="index.jsp">Powrót do menu</a><p>
 </p>
 
 </body>

@@ -93,7 +93,7 @@ public final class form_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\tFacebook<input type=\"checkbox\" name=\"inf\" value=\"Facebook\"><br>\r\n");
       out.write("\t\t\tZnajomi<input type=\"checkbox\" name=\"inf\" value=\"Znajomi\"><br>\r\n");
       out.write("\t\t\tInne (jakie?) <input type=\"text\" name=\"inf\"><br><br>\r\n");
-      out.write("\t\tCzym się zajmujesz? <input type=\"text\" name=\"job\" value=\"");
+      out.write("\t\tCzym się zajmujesz: <input type=\"text\" name=\"job\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.job}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><br><br>\r\n");
       out.write("\t\t<input type=\"submit\" value=\"Wyślij\"><br>\t\r\n");

@@ -10,7 +10,6 @@
     <body>
         <h1>Zadanie 1(Servlety, JSP)</h1>
         
-        <p><a href="test">Testowy Servlet</a></p>
         <p><a href="form.jsp">Formularz</a><p>
         <p><a href="showAll.jsp">Lista zgłoszonych</a><p>
         
